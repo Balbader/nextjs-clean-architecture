@@ -1,3 +1,21 @@
+/**
+ * This file serves as the Dependency Injection (DI) container configuration for the application.
+ * In Clean Architecture, the DI container is a crucial infrastructure component that manages
+ * dependencies between different layers while maintaining their independence.
+ * 
+ * The container registers and resolves dependencies for:
+ * - Infrastructure services (monitoring, database)
+ * - Application services
+ * - Use cases/interactors
+ * - Repositories
+ * 
+ * This centralized DI setup ensures:
+ * 1. Proper dependency inversion (high-level modules don't depend on low-level modules)
+ * 2. Loose coupling between components
+ * 3. Easier testing through dependency substitution
+ * 4. Single source of truth for application-wide dependencies
+ */
+
 import { createContainer } from '@evyweb/ioctopus';
 
 import { DI_RETURN_TYPES, DI_SYMBOLS } from '@/di/types';

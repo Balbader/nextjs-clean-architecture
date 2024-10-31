@@ -1,3 +1,12 @@
+/* 
+This file is part of the Infrastructure Layer in Clean Architecture.
+It represents a database migration snapshot that defines the schema structure
+for our SQLite database. In Clean Architecture, this belongs to the outermost layer
+(frameworks & drivers) as it deals with database-specific implementation details.
+The snapshot tracks table definitions, relationships, and constraints that support
+the domain entities (User, Todo, Session) while keeping database concerns isolated
+from the business logic.
+*/
 {
   "version": "6",
   "dialect": "sqlite",

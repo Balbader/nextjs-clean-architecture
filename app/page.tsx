@@ -1,3 +1,17 @@
+/**
+ * This file serves as the main page component in our Next.js application, acting as a UI layer
+ * in the Clean Architecture pattern. It represents a presentation layer component that:
+ * 
+ * 1. Handles the UI composition and layout of the TODO application
+ * 2. Coordinates with controllers (via dependency injection) to fetch data
+ * 3. Manages error boundaries and authentication redirects
+ * 4. Delegates to child components for specific UI features
+ * 
+ * Following Clean Architecture principles, this component doesn't contain business logic
+ * but rather orchestrates the interaction between the UI and the application's use cases
+ * through injected controllers and services.
+ */
+
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 

@@ -1,5 +1,17 @@
 'use client';
 
+/**
+ * This component represents a presentation layer element in the clean architecture.
+ * It handles the UI representation of todos and user interactions, following the
+ * separation of concerns principle. The component manages local state for bulk operations
+ * and delegates data mutations to server actions (defined in actions.ts).
+ * 
+ * This follows clean architecture by:
+ * 1. Keeping UI logic separate from business logic
+ * 2. Using dependency inversion (receiving todos as props)
+ * 3. Delegating data modifications to use cases (server actions)
+ */
+
 import { useCallback, useState } from 'react';
 import { Trash } from 'lucide-react';
 import { toast } from 'sonner';

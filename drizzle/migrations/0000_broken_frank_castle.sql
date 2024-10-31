@@ -1,3 +1,10 @@
+-- This migration file represents the data layer in Clean Architecture.
+-- It defines the database schema and relationships between core entities:
+-- users, their sessions, and todos. In Clean Architecture, this sits in
+-- the outermost layer (frameworks & drivers) as it deals with database
+-- infrastructure. The schema supports the domain entities while keeping
+-- them isolated from the specific database implementation details.
+
 CREATE TABLE `session` (
 	`id` text PRIMARY KEY NOT NULL,
 	`user_id` text NOT NULL,

@@ -1,3 +1,18 @@
+/**
+ * Root Layout Component (Presentation Layer)
+ * 
+ * This file serves as the root layout component in our Next.js application, representing
+ * the outermost layer of the UI in our clean architecture implementation. It belongs to
+ * the presentation/UI layer, handling the global layout structure, theme management,
+ * and font configuration.
+ * 
+ * In clean architecture terms, this component:
+ * - Lives in the outermost layer (Interface Adapters/Presentation)
+ * - Contains no business logic
+ * - Focuses purely on UI concerns (layout, theming, fonts)
+ * - Provides the foundational structure for all other UI components
+ */
+
 import type { Metadata } from 'next';
 import './globals.css';
 import { Inter as FontSans } from 'next/font/google';

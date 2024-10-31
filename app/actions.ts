@@ -1,5 +1,20 @@
 'use server';
 
+/**
+ * This file contains server actions that serve as the entry point for client-side interactions
+ * in our Clean Architecture implementation. Server actions act as the outer-most layer (frameworks & drivers),
+ * connecting the UI with our application's use cases through controllers.
+ * 
+ * These actions handle:
+ * 1. HTTP/Server-specific concerns (cookies, cache revalidation)
+ * 2. Error handling and user-friendly messages
+ * 3. Instrumentation and crash reporting
+ * 4. Dependency injection of required controllers
+ * 
+ * The actions delegate the actual business logic to controllers, maintaining separation of concerns
+ * and keeping the business rules independent of delivery mechanisms.
+ */
+
 import { revalidatePath } from 'next/cache';
 import { cookies } from 'next/headers';
 

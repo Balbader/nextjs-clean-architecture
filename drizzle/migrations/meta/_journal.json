@@ -1,3 +1,7 @@
+// This file is part of the Infrastructure layer in Clean Architecture.
+// It serves as a migration journal for the database schema changes using Drizzle ORM.
+// The journal tracks all database migrations, their versions, timestamps, and breakpoints,
+// ensuring database schema changes are tracked and can be rolled forward or backward.
 {
   "version": "7",
   "dialect": "sqlite",

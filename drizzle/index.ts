@@ -1,3 +1,19 @@
+/**
+ * Database Configuration and Adapters (Infrastructure Layer)
+ * 
+ * This file serves as part of the infrastructure layer in clean architecture.
+ * It handles the database configuration, connection setup, and provides the necessary
+ * adapters and types for the application. It acts as a bridge between the database
+ * and the rest of the application, ensuring that database-specific implementation
+ * details are isolated from the business logic.
+ * 
+ * The file sets up:
+ * 1. Database connection using LibSQL
+ * 2. Drizzle ORM configuration
+ * 3. Lucia authentication adapter
+ * 4. Transaction types for repositories
+ */
+
 import { createClient, ResultSet } from '@libsql/client';
 import { DrizzleSQLiteAdapter } from '@lucia-auth/adapter-drizzle';
 import { ExtractTablesWithRelations } from 'drizzle-orm';

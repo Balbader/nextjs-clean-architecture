@@ -1,3 +1,19 @@
+/**
+ * Authentication Module - Dependency Injection Configuration
+ * 
+ * This module is part of the Clean Architecture's configuration layer, specifically handling
+ * dependency injection for the authentication domain. It wires together the different layers
+ * of the application:
+ * 
+ * - Interface Adapters (Controllers)
+ * - Application Layer (Use Cases)
+ * - Infrastructure Layer (Services)
+ * 
+ * It follows the Dependency Inversion Principle by ensuring that all dependencies point inward,
+ * with inner layers having no knowledge of outer layers. The module uses dependency injection
+ * to maintain this separation and make the system more testable and maintainable.
+ */
+
 import { Container } from '@evyweb/ioctopus';
 
 import { AuthenticationService } from '@/src/infrastructure/services/authentication.service';
