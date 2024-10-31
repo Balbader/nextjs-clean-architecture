@@ -1,3 +1,20 @@
+/**
+ * TodosRepository: Infrastructure Layer Implementation
+ * 
+ * This repository implements the ITodosRepository interface from the application layer,
+ * following clean architecture principles. It serves as a concrete implementation
+ * in the infrastructure layer, handling the actual data persistence operations.
+ * 
+ * The repository uses Drizzle ORM for database operations and includes instrumentation
+ * for monitoring and error reporting. It maintains the separation of concerns by:
+ * - Implementing interfaces defined in the application layer
+ * - Handling database-specific logic and error handling
+ * - Converting between database models and domain entities
+ * 
+ * This implementation is independent of business logic (use cases) and can be
+ * replaced with different storage implementations without affecting the core business rules.
+ */
+
 import { eq } from 'drizzle-orm';
 
 import { db, Transaction } from '@/drizzle';
@@ -12,7 +29,7 @@ export class TodosRepository implements ITodosRepository {
   constructor(
     private readonly instrumentationService: IInstrumentationService,
     private readonly crashReporterService: ICrashReporterService
-  ) {}
+  ) { }
 
   async createTodo(todo: TodoInsert, tx?: Transaction): Promise<Todo> {
     const invoker = tx ?? db;

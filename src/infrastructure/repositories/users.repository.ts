@@ -1,3 +1,16 @@
+/**
+ * Users Repository Implementation - Infrastructure Layer
+ * 
+ * This repository implements the IUsersRepository interface from the application layer,
+ * following clean architecture principles. It serves as a concrete implementation
+ * in the infrastructure layer, handling the actual data persistence operations.
+ * 
+ * The repository uses Drizzle ORM for database operations and includes instrumentation
+ * and crash reporting capabilities. It acts as an adapter between the domain/application
+ * layer and the actual database, ensuring that the inner layers remain independent
+ * of the specific database technology being used.
+ */
+
 import { eq } from 'drizzle-orm';
 
 import { db } from '@/drizzle';
@@ -12,7 +25,7 @@ export class UsersRepository implements IUsersRepository {
   constructor(
     private readonly instrumentationService: IInstrumentationService,
     private readonly crashReporterService: ICrashReporterService
-  ) {}
+  ) { }
   async getUser(id: string): Promise<User | undefined> {
     return await this.instrumentationService.startSpan(
       { name: 'UsersRepository > getUser' },

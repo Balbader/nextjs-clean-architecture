@@ -1,3 +1,16 @@
+/**
+ * Mock Users Repository Implementation
+ * 
+ * This file is part of the Infrastructure layer in Clean Architecture.
+ * It provides a mock implementation of the IUsersRepository interface
+ * defined in the Application layer. This mock repository is primarily 
+ * used for testing purposes and contains hardcoded user data.
+ * 
+ * In Clean Architecture, repositories in the Infrastructure layer implement
+ * interfaces defined in the Application layer, allowing for dependency
+ * inversion and making the system more testable and maintainable.
+ */
+
 import { hashSync } from 'bcrypt-ts';
 
 import { IUsersRepository } from '@/src/application/repositories/users.repository.interface';

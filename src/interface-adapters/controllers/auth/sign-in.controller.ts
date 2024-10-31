@@ -1,3 +1,16 @@
+/**
+ * Sign In Controller - Interface Adapter Layer (Clean Architecture)
+ * 
+ * This controller acts as an interface adapter in the clean architecture pattern,
+ * sitting between the outer framework/UI layer and the inner application layer.
+ * It handles the validation and transformation of incoming sign-in data before
+ * passing it to the use case. The controller:
+ * 1. Validates input using Zod schema
+ * 2. Transforms external data into the format expected by the use case
+ * 3. Handles input validation errors
+ * 4. Provides instrumentation/monitoring of the sign-in process
+ */
+
 import { z } from 'zod';
 
 import { ISignInUseCase } from '@/src/application/use-cases/auth/sign-in.use-case';
@@ -17,18 +30,18 @@ export const signInController =
     instrumentationService: IInstrumentationService,
     signInUseCase: ISignInUseCase
   ) =>
-  async (input: Partial<z.infer<typeof inputSchema>>): Promise<Cookie> => {
-    return await instrumentationService.startSpan(
-      { name: 'signIn Controller' },
-      async () => {
-        const { data, error: inputParseError } = inputSchema.safeParse(input);
+    async (input: Partial<z.infer<typeof inputSchema>>): Promise<Cookie> => {
+      return await instrumentationService.startSpan(
+        { name: 'signIn Controller' },
+        async () => {
+          const { data, error: inputParseError } = inputSchema.safeParse(input);
 
-        if (inputParseError) {
-          throw new InputParseError('Invalid data', { cause: inputParseError });
+          if (inputParseError) {
+            throw new InputParseError('Invalid data', { cause: inputParseError });
+          }
+
+          const { cookie } = await signInUseCase(data);
+          return cookie;
         }
-
-        const { cookie } = await signInUseCase(data);
-        return cookie;
-      }
-    );
-  };
+      );
+    };

@@ -1,3 +1,14 @@
+/**
+ * Mock implementation of the TodosRepository for testing purposes.
+ * 
+ * In Clean Architecture, this class belongs to the Infrastructure layer and implements
+ * the ITodosRepository interface from the Application layer. It provides an in-memory
+ * implementation of the repository pattern, allowing for isolated testing without
+ * requiring a real database connection. This follows the Dependency Inversion Principle
+ * where high-level modules (use cases) depend on abstractions (ITodosRepository)
+ * rather than concrete implementations.
+ */
+
 import { ITodosRepository } from '@/src/application/repositories/todos.repository.interface';
 import { Todo, TodoInsert } from '@/src/entities/models/todo';
 

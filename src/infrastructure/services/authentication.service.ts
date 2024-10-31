@@ -1,3 +1,18 @@
+/**
+ * Infrastructure Layer - Authentication Service Implementation
+ * 
+ * This service implements the IAuthenticationService interface from the application layer,
+ * providing concrete authentication functionality using the Lucia auth library.
+ * 
+ * In clean architecture, this class belongs to the infrastructure/outer layer as it:
+ * 1. Implements interfaces defined in the application layer
+ * 2. Contains external dependencies (Lucia)
+ * 3. Handles technical details of authentication that should be isolated from business logic
+ * 
+ * The service manages user sessions, authentication state, and provides core auth functionality
+ * while keeping the implementation details hidden from the application core.
+ */
+
 import { generateIdFromEntropySize, Lucia } from 'lucia';
 
 import { SESSION_COOKIE } from '@/config';

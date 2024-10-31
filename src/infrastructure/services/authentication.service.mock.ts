@@ -1,3 +1,16 @@
+/**
+ * Mock Authentication Service - Infrastructure Layer
+ * 
+ * This mock implementation of the IAuthenticationService interface belongs to the infrastructure layer
+ * of the clean architecture. It provides a test double for the authentication service, allowing
+ * for isolated testing of components that depend on authentication functionality.
+ * 
+ * The service maintains an in-memory store of sessions and implements all the contract methods
+ * defined by the application layer's interface, but in a simplified way suitable for testing.
+ * This follows the Dependency Inversion Principle, where high-level modules (application layer)
+ * don't depend on low-level implementations, but both depend on abstractions.
+ */
+
 import { IAuthenticationService } from '@/src/application/services/authentication.service.interface';
 import { UnauthenticatedError } from '@/src/entities/errors/auth';
 import { User } from '@/src/entities/models/user';
