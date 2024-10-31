@@ -1,5 +1,17 @@
 'use client';
 
+/**
+ * UI Component: Checkbox
+ * 
+ * This component is part of the UI/Presentation layer in clean architecture.
+ * It represents a reusable, accessible checkbox component built using Radix UI primitives.
+ * As a presentational component, it's responsible only for rendering and user interactions,
+ * without containing any business logic or data management.
+ * 
+ * The component follows the adapter pattern by wrapping the Radix UI checkbox primitive
+ * with our application's styling and accessibility requirements.
+ */
+
 import * as React from 'react';
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
 import { Check } from 'lucide-react';

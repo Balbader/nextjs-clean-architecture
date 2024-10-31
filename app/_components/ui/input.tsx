@@ -1,9 +1,17 @@
+/**
+ * This component represents a UI-level input element following Clean Architecture principles.
+ * It belongs to the Interface Adapters / Presentation layer, specifically in the UI components section.
+ * The Input component is a reusable, styled form control that adapts the raw HTML input element
+ * to match our application's design system while maintaining accessibility and native functionality.
+ * It uses composition and forwarded refs to remain flexible and maintainable.
+ */
+
 import * as React from 'react';
 
 import { cn } from '@/app/_components/utils';
 
 export interface InputProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {}
+  extends React.InputHTMLAttributes<HTMLInputElement> { }
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, type, ...props }, ref) => {

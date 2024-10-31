@@ -1,5 +1,17 @@
 'use client';
 
+/**
+ * Sign In Page Component
+ * 
+ * This component represents a presentation layer element in the Clean Architecture pattern.
+ * It serves as a UI component responsible for handling user authentication through a sign-in form.
+ * Following Clean Architecture principles, this component:
+ * - Handles UI rendering and form state management
+ * - Delegates business logic to the domain layer through the signIn action
+ * - Maintains separation of concerns by focusing solely on presentation logic
+ * - Acts as part of the interface adapters layer, converting data between the UI and domain layers
+ */
+
 import { useState } from 'react';
 
 import Link from 'next/link';

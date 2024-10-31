@@ -1,5 +1,13 @@
 'use client';
 
+/**
+ * This component is part of the UI layer in Clean Architecture, specifically within the Interface Adapters layer.
+ * It provides a reusable dropdown menu component built on top of Radix UI primitives, implementing the presentation
+ * logic and styling while remaining independent of business rules. This separation ensures that UI components can
+ * be modified or replaced without affecting the core business logic of the application. The component follows the
+ * dependency rule by depending only on UI frameworks and utilities, not on any business logic or use cases.
+ */
+
 import * as React from 'react';
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
 import { Check, ChevronRight, Circle } from 'lucide-react';

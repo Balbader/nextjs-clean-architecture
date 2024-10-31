@@ -1,5 +1,18 @@
 'use server';
 
+/**
+ * This file contains server actions that handle authentication-related operations in the application.
+ * In terms of Clean Architecture, these actions serve as interface adapters that:
+ * 1. Accept incoming requests from the presentation layer (web forms)
+ * 2. Transform the data into a format suitable for the use cases
+ * 3. Coordinate with the dependency injection container to get the required controllers
+ * 4. Handle responses and errors appropriately
+ * 5. Manage session cookies and redirects
+ * 
+ * These actions maintain the dependency rule of Clean Architecture by depending only inward
+ * (towards use cases and entities) through interfaces, never outward towards frameworks.
+ */
+
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 

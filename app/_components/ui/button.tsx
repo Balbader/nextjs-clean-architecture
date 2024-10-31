@@ -1,3 +1,21 @@
+/**
+ * UI Component: Button
+ * 
+ * This component is part of the UI layer in Clean Architecture, specifically belonging to the
+ * Interface Adapters / Presentation layer. It serves as a reusable, presentational component
+ * that handles the visual representation of buttons throughout the application.
+ * 
+ * The component is framework-specific (React) and implements various styling variants using
+ * Tailwind CSS and class-variance-authority. It's designed to be highly reusable and
+ * configurable while maintaining consistency with the application's design system.
+ * 
+ * In Clean Architecture terms, this component:
+ * - Is part of the outer layer (UI/Presentation)
+ * - Has no business logic or domain knowledge
+ * - Focuses purely on how things look and interact
+ * - Can be easily replaced without affecting business rules
+ */
+
 import * as React from 'react';
 import { Slot } from '@radix-ui/react-slot';
 import { cva, type VariantProps } from 'class-variance-authority';
@@ -35,7 +53,7 @@ const buttonVariants = cva(
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
+  VariantProps<typeof buttonVariants> {
   asChild?: boolean;
 }
 

@@ -1,3 +1,16 @@
+/**
+ * UI Component: Card
+ * 
+ * This component is part of the presentation layer in clean architecture,
+ * specifically belonging to the UI components category. It provides a reusable
+ * card interface component following the atomic design pattern.
+ * 
+ * The card component is framework-agnostic and purely presentational,
+ * handling only UI concerns without any business logic. It includes sub-components
+ * for header, content, footer, title, and description to maintain a modular
+ * and composable structure.
+ */
+
 import * as React from 'react';
 
 import { cn } from '@/app/_components/utils';

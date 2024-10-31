@@ -1,5 +1,18 @@
 'use client';
 
+/**
+ * Sign Up Page Component
+ * 
+ * This component represents a presentation layer element in the Clean Architecture pattern.
+ * It serves as a UI component responsible for user registration, handling form inputs and
+ * validation at the client side. Following Clean Architecture principles, this component:
+ * 
+ * - Acts as part of the Interface Adapters layer (presentation)
+ * - Depends on the use cases (signUp action) but not on external frameworks
+ * - Handles only UI concerns and basic form validation
+ * - Delegates actual business logic to the use cases layer
+ */
+
 import Link from 'next/link';
 import { useState } from 'react';
 
