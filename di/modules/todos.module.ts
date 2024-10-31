@@ -1,3 +1,19 @@
+/**
+ * This module registers all todo-related dependencies in the IoC container.
+ * It includes repositories, use cases, and controllers for managing todos.
+ * In test environment, it uses mock implementations for repositories.
+ * 
+ * Clean Architecture Role:
+ * This is a configuration module that sits outside the main Clean Architecture layers.
+ * It acts as a composition root that wires together:
+ * - Controllers (Interface Adapters layer)
+ * - Use Cases (Application layer) 
+ * - Repositories (Infrastructure layer)
+ * 
+ * By using dependency injection, it maintains the dependency rule where inner layers
+ * (domain and application) don't depend on outer layers (interface adapters and infrastructure).
+ */
+
 import { Container } from '@evyweb/ioctopus';
 
 import { MockTodosRepository } from '@/src/infrastructure/repositories/todos.repository.mock';

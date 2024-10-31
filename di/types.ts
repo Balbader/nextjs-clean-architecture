@@ -1,3 +1,22 @@
+/**
+ * This file contains dependency injection (DI) type definitions and symbols used throughout the application.
+ * It defines two main exports:
+ * 1. DI_SYMBOLS: A collection of unique Symbol identifiers for all injectable dependencies
+ * 2. DI_RETURN_TYPES: An interface mapping each symbol to its corresponding implementation type
+ * 
+ * These types and symbols are used by the DI container to manage service instantiation and injection.
+ * 
+ * Clean Architecture Role:
+ * ----------------------
+ * This file acts as a cross-cutting concern that supports dependency inversion - one of the key principles
+ * of Clean Architecture. It helps maintain the dependency rule by allowing high-level modules (use cases) 
+ * to define interfaces that low-level modules (implementations) must conform to. The DI container uses these
+ * symbols and types to:
+ * - Decouple interface definitions from their implementations
+ * - Enable runtime binding of concrete implementations to abstract interfaces
+ * - Support the inversion of control principle across all architectural layers
+ */
+
 import { IAuthenticationService } from '@/src/application/services/authentication.service.interface';
 import { ITransactionManagerService } from '@/src/application/services/transaction-manager.service.interface';
 import { IInstrumentationService } from '@/src/application/services/instrumentation.service.interface';
