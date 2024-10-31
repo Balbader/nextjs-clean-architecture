@@ -1,5 +1,16 @@
 'use client';
 
+/**
+ * UI Component: Toast Notifications Adapter
+ * 
+ * This component serves as a presentation layer adapter in the clean architecture,
+ * providing a consistent theming interface for toast notifications across the application.
+ * It adapts the Sonner toast library to work with our application's theme system and
+ * styling conventions, ensuring a cohesive user interface while maintaining separation
+ * of concerns. The component handles theme synchronization and provides standardized
+ * styling through CSS classes.
+ */
+
 import { useTheme } from 'next-themes';
 import { Toaster as Sonner } from 'sonner';
 
