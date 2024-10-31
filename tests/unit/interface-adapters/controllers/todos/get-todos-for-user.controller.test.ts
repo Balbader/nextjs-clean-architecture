@@ -1,3 +1,15 @@
+/**
+ * Tests for the GetTodosForUser Controller
+ * 
+ * In Clean Architecture, controllers are part of the Interface Adapters layer.
+ * They handle HTTP requests and responses, converting external data formats
+ * into internal ones that can be used by the use cases. These tests verify
+ * that the controller correctly:
+ * 1. Handles authentication by validating session IDs
+ * 2. Retrieves todos for authenticated users
+ * 3. Returns appropriate errors for unauthenticated requests
+ */
+
 import { expect, it } from 'vitest';
 
 import { getInjection } from '@/di/container';

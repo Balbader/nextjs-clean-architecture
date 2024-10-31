@@ -1,3 +1,16 @@
+/**
+ * Unit tests for the SignOut Controller in the Interface Adapters layer of Clean Architecture.
+ * 
+ * In Clean Architecture, controllers are part of the Interface Adapters layer, which converts
+ * data between the format most convenient for use cases/entities and the format most convenient
+ * for external agencies (like web frameworks). This controller specifically handles the sign-out
+ * functionality by managing session cookies and input validation.
+ * 
+ * These tests verify that the controller properly:
+ * 1. Clears session cookies during sign-out
+ * 2. Validates input parameters before processing
+ */
+
 import { expect, it } from 'vitest';
 
 import { getInjection } from '@/di/container';

@@ -1,3 +1,16 @@
+/**
+ * Unit tests for the Bulk Update Controller in the Interface Adapters layer of Clean Architecture.
+ * 
+ * In Clean Architecture, controllers act as interface adapters that convert data from the format most 
+ * convenient for use cases and entities, to the format most convenient for external agencies (like web).
+ * 
+ * This test suite verifies the bulk update controller's ability to:
+ * - Handle multiple todo updates and deletions in a single operation
+ * - Validate input data
+ * - Manage transaction rollbacks on errors
+ * - Handle authentication requirements
+ */
+
 import { expect, it, vi } from 'vitest';
 
 import { getInjection } from '@/di/container';
@@ -92,7 +105,7 @@ it('rolls back when an error happens', async () => {
 
   const consoleErrorSpy = vi
     .spyOn(console, 'error')
-    .mockImplementation(() => {});
+    .mockImplementation(() => { });
 
   // Delete the 1st and 3rd before attempting to update them
   await bulkUpdateController(

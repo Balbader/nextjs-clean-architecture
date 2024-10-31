@@ -1,3 +1,17 @@
+/**
+ * Unit tests for the SignIn Controller in the Interface Adapters layer of Clean Architecture.
+ * 
+ * In Clean Architecture, Controllers are part of the Interface Adapters layer, which sits between
+ * the outer Frameworks/Drivers layer and the inner Application Business Rules layer. The SignIn
+ * Controller is responsible for:
+ * 1. Validating and parsing input data from the outer layer
+ * 2. Converting that data into a format suitable for the use case
+ * 3. Handling the response from the use case and converting it back to a format suitable for
+ *    the delivery mechanism (in this case, a session cookie)
+ * 
+ * These tests verify the controller's input validation, error handling, and successful authentication flow.
+ */
+
 import { expect, it } from 'vitest';
 
 import { getInjection } from '@/di/container';

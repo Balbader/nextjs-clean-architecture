@@ -1,3 +1,16 @@
+/**
+ * Unit tests for the ToggleTodo use case in the Application layer.
+ * 
+ * In Clean Architecture, use cases represent the application's business rules and orchestrate the flow 
+ * of data between the outside world and the system. These tests verify that the ToggleTodo use case:
+ * 1. Correctly toggles a todo's completion status when authorized
+ * 2. Enforces access control by preventing unauthorized users from toggling others' todos
+ * 3. Handles invalid inputs appropriately
+ * 
+ * The tests focus purely on business logic without any infrastructure concerns,
+ * following Clean Architecture's separation of concerns principle.
+ */
+
 import { expect, it } from 'vitest';
 
 import { getInjection } from '@/di/container';

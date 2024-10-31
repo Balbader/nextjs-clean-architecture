@@ -1,3 +1,17 @@
+/**
+ * Unit tests for the SignUp Controller in the Interface Adapters layer of Clean Architecture.
+ * 
+ * In Clean Architecture, Controllers act as the entry point to our use cases, handling:
+ * 1. Input validation and parsing
+ * 2. Converting external data structures into internal entities/models
+ * 3. Orchestrating the flow of data to use cases
+ * 
+ * These tests verify that the SignUp Controller properly:
+ * - Validates user registration input
+ * - Handles error cases (invalid input, duplicate usernames)
+ * - Returns the expected session cookie on successful registration
+ */
+
 import { expect, it } from 'vitest';
 
 import { getInjection } from '@/di/container';

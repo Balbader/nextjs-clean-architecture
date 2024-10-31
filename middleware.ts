@@ -1,3 +1,12 @@
+/**
+ * This middleware acts as an infrastructure layer component in the clean architecture pattern.
+ * It handles cross-cutting concerns like authentication and session validation for the application.
+ * The middleware intercepts all non-API HTTP requests to ensure users are authenticated before
+ * accessing protected routes. It integrates with the authentication service through dependency
+ * injection, maintaining separation of concerns and keeping the authentication logic independent
+ * from the delivery mechanism.
+ */
+
 import { NextResponse, type NextRequest } from 'next/server';
 
 import { getInjection } from '@/di/container';

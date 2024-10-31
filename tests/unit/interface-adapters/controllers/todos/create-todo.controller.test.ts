@@ -1,3 +1,18 @@
+/**
+ * Tests for the CreateTodoController in the Interface Adapters layer of Clean Architecture.
+ * 
+ * In Clean Architecture, controllers act as interface adapters that convert data from 
+ * the format most convenient for the use cases and entities, to the format most convenient
+ * for some external agency (like a web framework).
+ * 
+ * This test suite verifies that the CreateTodoController properly:
+ * - Handles input validation
+ * - Manages authentication
+ * - Processes single and multiple todo creation
+ * - Handles error cases and rollbacks
+ * - Converts between the external input format and the format needed by inner layers
+ */
+
 import { expect, it, vi } from 'vitest';
 
 import { getInjection } from '@/di/container';
@@ -71,7 +86,7 @@ it('rolls back when error happens', async () => {
 
   const consoleErrorSpy = vi
     .spyOn(console, 'error')
-    .mockImplementation(() => {});
+    .mockImplementation(() => { });
 
   await createTodoController(
     { todo: 'Testing rollbacks, One, Should rollback, Two' },

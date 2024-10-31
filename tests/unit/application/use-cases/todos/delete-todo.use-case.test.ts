@@ -1,3 +1,17 @@
+/**
+ * Unit tests for the DeleteTodo use case.
+ * 
+ * In clean architecture, use cases represent the application's business rules and orchestrate the flow 
+ * of data between the outer layers (like controllers/UI) and the domain entities. These tests verify 
+ * that the DeleteTodo use case correctly handles:
+ * - Successful todo deletion
+ * - Authorization checks (only todo owners can delete their todos)
+ * - Error cases (invalid inputs, not found scenarios)
+ * 
+ * The tests are isolated from external dependencies and focus purely on the business logic
+ * of todo deletion within the application layer.
+ */
+
 import { expect, it } from 'vitest';
 
 import { getInjection } from '@/di/container';

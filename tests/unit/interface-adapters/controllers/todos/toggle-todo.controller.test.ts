@@ -1,3 +1,16 @@
+/**
+ * Tests for the ToggleTodoController in the Interface Adapters layer of Clean Architecture.
+ * 
+ * In Clean Architecture, controllers act as the entry point to our business logic,
+ * handling the translation between the delivery mechanism (e.g., HTTP requests) 
+ * and our use cases. This test suite verifies that the ToggleTodoController:
+ * 
+ * 1. Properly handles the toggling of todo completion states
+ * 2. Validates input data
+ * 3. Enforces authentication and authorization rules
+ * 4. Maintains proper separation of concerns by delegating business logic to use cases
+ */
+
 import { expect, it } from 'vitest';
 
 import { getInjection } from '@/di/container';
